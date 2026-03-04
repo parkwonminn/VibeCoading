@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiMeow - 반려묘와 함께하는 행복</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo">VoiMeow</h1>
+            <nav class="navigation">
+                <a href="#" class="nav-link">회사소개</a>
+                <a href="#" class="nav-link">공지사항</a>
+                <a href="#" class="nav-link">사용방법</a>
+                <a href="#" class="nav-link">커뮤니티</a>
+                <a href="#" class="nav-link">이벤트</a>
+                <a href="#" class="nav-link">고객센터</a>
+                <a href="#" class="nav-link nav-link--highlight">로그인/회원가입</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="background-slideshow" aria-hidden="true">
+                <div class="background-slide background-slide--active" data-slide-index="0"></div>
+                <div class="background-slide" data-slide-index="1"></div>
+                <div class="background-slide" data-slide-index="2"></div>
+                <div class="background-slide" data-slide-index="3"></div>
+                <div class="background-slide" data-slide-index="4"></div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-section">
+                <h3 class="footer-title">주소</h3>
+                <p class="footer-text">서울특별시 강남구 테헤란로 123 VoiMeow 빌딩</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">연락처</h3>
+                <p class="footer-text">대표전화: 02-1234-5678</p>
+                <p class="footer-text">팩스: 02-1234-5679</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">고객지원</h3>
+                <a href="#" class="footer-link">챗봇 상담</a>
+                <a href="#" class="footer-link">원격지원</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">파트너십</h3>
+                <a href="#" class="footer-link">파트너십 문의</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 챗봇 UI -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-header-content">
+                <h3 class="chatbot-title">VoiMeow 상담봇</h3>
+                <p class="chatbot-subtitle">무엇을 도와드릴까요?</p>
+            </div>
+            <button class="chatbot-close-button" id="closeChatbotButton" aria-label="챗봇 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message chatbot-message--bot">
+                <div class="chatbot-message-content">
+                    안녕하세요! VoiMeow 상담봇입니다. 반려묘에 관한 궁금한 점을 물어보세요.
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input-area">
+            <input 
+                type="text" 
+                class="chatbot-input" 
+                id="chatbotInput" 
+                placeholder="메시지를 입력하세요..."
+                aria-label="챗봇 메시지 입력"
+            >
+            <button class="chatbot-send-button" id="sendMessageButton" aria-label="메시지 전송">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <button class="chatbot-floating-button" id="openChatbotButton" aria-label="챗봇 열기">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
