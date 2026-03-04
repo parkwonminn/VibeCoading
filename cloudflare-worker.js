@@ -13,7 +13,7 @@
  */
 
 const ALLOWED_ORIGINS = [
-    'https://your-github-username.github.io',
+    'https://parkwonminn.github.io/VibeCoading/',
     'http://localhost',
     'http://127.0.0.1'
 ];
