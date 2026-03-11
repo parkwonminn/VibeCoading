@@ -1,0 +1,31 @@
+# 환경 설정 파일 (API 키 포함 가능)
+.env
+.env.local
+.env.*.local
+config.js
+config.local.js
+
+# Cloudflare Worker 파일 (API 키 설정 정보 포함)
+cloudflare-worker.js
+
+# API 키 파일
+*api_key*
+*apikey*
+*secret*
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 로그 파일
+*.log
+npm-debug.log*
+
+# 의존성 폴더
+node_modules/

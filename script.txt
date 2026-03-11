@@ -1,0 +1,58 @@
+/**
+ * VoiMeow 웹 소개 페이지 - 배경 슬라이드쇼 로직
+ * 행복한 고양이 사진들이 부드럽게 전환되며 배경으로 표시됨
+ */
+
+const SLIDE_INTERVAL_MS = 4000;
+const SLIDE_ACTIVE_CLASS = 'background-slide--active';
+
+/** 행복한 고양이 이미지 URL 목록 (Unsplash 무료 이미지) */
+const CAT_BACKGROUND_IMAGES = [
+    'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1920&h=1080&fit=crop',
+    'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=1920&h=1080&fit=crop',
+    'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=1920&h=1080&fit=crop',
+    'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=1920&h=1080&fit=crop',
+    'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=1920&h=1080&fit=crop',
+];
+
+/**
+ * 각 슬라이드 요소에 배경 이미지를 적용함
+ */
+function initializeSlideBackgrounds() {
+    const slideElements = document.querySelectorAll('.background-slide');
+
+    slideElements.forEach((slideElement, index) => {
+        const imageUrl = CAT_BACKGROUND_IMAGES[index % CAT_BACKGROUND_IMAGES.length];
+        slideElement.style.backgroundImage = `url('${imageUrl}')`;
+    });
+}
+
+/**
+ * 현재 활성 슬라이드를 다음 슬라이드로 전환함
+ */
+function rotateToNextSlide() {
+    const slideElements = document.querySelectorAll('.background-slide');
+    const activeSlide = document.querySelector(`.${SLIDE_ACTIVE_CLASS}`);
+    const currentIndex = activeSlide
+        ? parseInt(activeSlide.dataset.slideIndex, 10)
+        : 0;
+    const nextIndex = (currentIndex + 1) % slideElements.length;
+
+    slideElements[currentIndex].classList.remove(SLIDE_ACTIVE_CLASS);
+    slideElements[nextIndex].classList.add(SLIDE_ACTIVE_CLASS);
+}
+
+/**
+ * 배경 슬라이드쇼를 시작함
+ */
+function startBackgroundSlideshow() {
+    initializeSlideBackgrounds();
+    setInterval(rotateToNextSlide, SLIDE_INTERVAL_MS);
+}
+
+/** DOM 로드 완료 후 슬라이드쇼 시작 */
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startBackgroundSlideshow);
+} else {
+    startBackgroundSlideshow();
+}
